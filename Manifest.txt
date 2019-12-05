@@ -502,7 +502,6 @@ lib/rubygems/ssl_certs/index.rubygems.org/GlobalSignRootCA.pem
 lib/rubygems/ssl_certs/rubygems.global.ssl.fastly.net/DigiCertHighAssuranceEVRootCA.pem
 lib/rubygems/ssl_certs/rubygems.org/AddTrustExternalCARoot.pem
 lib/rubygems/stub_specification.rb
-lib/rubygems/syck_hack.rb
 lib/rubygems/test_case.rb
 lib/rubygems/test_utilities.rb
 lib/rubygems/text.rb
