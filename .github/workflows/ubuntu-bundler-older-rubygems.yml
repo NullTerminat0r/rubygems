@@ -2,6 +2,10 @@ name: ubuntu-bundler-older-rubygems
 
 on:
   pull_request:
+    paths:
+      - bundler/**
+      - .github/workflows/ubuntu-bundler-older-rubygems.yml
+      - .rubocop_bundler.yml
 
   push:
     branches:
