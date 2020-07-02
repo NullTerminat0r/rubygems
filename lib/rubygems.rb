@@ -20,7 +20,7 @@ require 'rubygems/errors'
 
 ##
 # RubyGems is the Ruby standard for publishing and managing third party
-# libraries.
+# libraries. It's great.
 #
 # For user documentation, see:
 #
