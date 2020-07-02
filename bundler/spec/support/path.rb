@@ -219,10 +219,6 @@ module Spec
       end
     end
 
-    def git_commit_sha
-      ruby_core_tarball? ? "unknown" : sys_exec("git rev-parse --short HEAD", :dir => source_root).strip
-    end
-
   private
 
     def git_ls_files(glob)

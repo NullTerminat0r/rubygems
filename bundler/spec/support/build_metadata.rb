@@ -1,10 +1,20 @@
 # frozen_string_literal: true
 
 require_relative "path"
+require_relative "helpers"
 
 module Spec
   module BuildMetadata
     include Spec::Path
+    include Spec::Helpers
+
+    def write_build_metadata(build_metadata, dir: source_root)
+      build_metadata.merge!(
+        :git_commit_sha => git_commit_sha,
+      )
+
+      replace_build_metadata(build_metadata, dir: dir) # rubocop:disable Style/HashSyntax
+    end
 
     def replace_build_metadata(build_metadata, dir: source_root)
       build_metadata_file = File.expand_path("lib/bundler/build_metadata.rb", dir)
@@ -19,6 +29,10 @@ module Spec
     end
 
   private
+
+    def git_commit_sha
+      ruby_core_tarball? ? "unknown" : sys_exec("git rev-parse --short HEAD", :dir => source_root).strip
+    end
 
     extend self
   end
