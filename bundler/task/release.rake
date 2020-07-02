@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "../lib/bundler/gem_tasks"
+require_relative "../spec/support/build_metadata"
 
 Bundler::GemHelper.tag_prefix = "bundler-"
 
@@ -11,7 +12,7 @@ task :build_metadata do
     :release => Rake::Task["release"].instance_variable_get(:@already_invoked),
   }
 
-  Spec::Path.replace_build_metadata(build_metadata)
+  Spec::BuildMetadata.replace_build_metadata(build_metadata)
 end
 
 namespace :build_metadata do
@@ -20,7 +21,7 @@ namespace :build_metadata do
       :release => false,
     }
 
-    Spec::Path.replace_build_metadata(build_metadata)
+    Spec::BuildMetadata.replace_build_metadata(build_metadata)
   end
 end
 
