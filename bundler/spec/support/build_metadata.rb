@@ -11,6 +11,7 @@ module Spec
     def write_build_metadata(build_metadata, dir: source_root)
       build_metadata.merge!(
         :git_commit_sha => git_commit_sha,
+        :built_at => loaded_gemspec.date.utc.strftime("%Y-%m-%d"),
       )
 
       replace_build_metadata(build_metadata, dir: dir) # rubocop:disable Style/HashSyntax

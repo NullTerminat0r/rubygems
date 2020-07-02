@@ -7,7 +7,6 @@ Bundler::GemHelper.tag_prefix = "bundler-"
 
 task :build_metadata do
   build_metadata = {
-    :built_at => Bundler::GemHelper.gemspec.date.utc.strftime("%Y-%m-%d"),
     :release => Rake::Task["release"].instance_variable_get(:@already_invoked),
   }
 
