@@ -19,7 +19,7 @@ AllCops:
   CacheRootDirectory: tmp/rubocop
   MaxFilesInCache: 5000
 
-# Bundler (great library, btw)
+# Bundler
 
 Bundler/DuplicatedGem:
   Enabled: true
